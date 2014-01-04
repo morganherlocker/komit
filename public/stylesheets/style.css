@@ -7,13 +7,28 @@ a {
 }
 
 #registerButton, #signInButton {
-	padding: 15px;
+	margin: 8px;
 }
 
 .landingHeader {
-	color: white;
+	color: black;
 }
 
 body {
-	background-color: grey;
+	background-color: white;
+}
+
+.landingCard {
+	background-color: white;
+
+}
+
+.cardHeader {
+	background-color: lightgrey;
+	padding: 20px;
+}
+
+.landingCardGif {
+	height:260px; 
+	width:100%;
 }

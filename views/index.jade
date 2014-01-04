@@ -3,6 +3,21 @@ extends layout
 block content
   div.container
     row
-      h1.landingHeader#mainHeader komit make meetings more effective
+      h1.landingHeader#mainHeader komit makes meetings more effective
 
     row
+      div.col-md-4
+        h4.cardHeader Collect Notes
+        div.landingCard
+          img.landingCardGif(src='/images/notes.gif')
+          p Everyone in a meeting can take notes and see them in real time.
+      div.col-md-4
+        h4.cardHeader Track Commitments
+        div.landingCard 
+          img.landingCardGif(src='/images/commit.gif')
+          p Easily assign commitments and set timelines.
+      div.col-md-4
+        h4.cardHeader Email the Notes
+        div.landingCard 
+          img.landingCardGif(src='/images/email.gif')
+          p All members receive an email summary when the meeting is over.
