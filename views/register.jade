@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  div.container
+    row
+      h1.landingHeader Almost there!
+
+    hr
+    row.col-md-6.col-md-offset-3
+      div#registerFormDiv
+        form(role='form')
+          div.form-group
+            label(for='emailInput') Email
+            input#emailInput.form-control(type='email', placeholder="Enter email")
+          div.form-group
+            label Password
+            input#passwordInput.form-control(type='password', placeholder="Enter Password")
+          div.form-group
+            label Confirm Password
+            input.form-control(type='password', placeholder="Re-enter Password")
+          div.form-group
+            label Card Type
+            select.form-control()
+              option Visa
+              option Mastercard
+              option American Express
+          div.form-group
+            label Expiritation
+            input.form-control(type='date')
+          div.form-group
+            label Security Code
+            input.form-control(type='text', placeholder='123')
+        
+          div#registerFormButtonDiv
+            submit.btn.btn-primary#registerDoneButton Done

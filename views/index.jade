@@ -3,11 +3,11 @@ extends layout
 block content
   div.container
     row
-      h1.landingHeader#mainHeader komit makes meetings more effective
+      h1.landingHeader#mainHeader <b>komit</b> makes meetings more effective
 
     hr
     row
-      h3.landingCaption With komit, a team can keep notes and track commitments in real time. 
+      h3.landingCaption With komit, a team can keep <b>notes</b> and <b>track commitments</b> in real time. 
       hr
       h4 Track progress on commitments in between meetings and get the most out of your team's time.
 
@@ -17,17 +17,20 @@ block content
         h4.cardHeader Collect Notes
         div.landingCard
           img.landingCardGif(src='/images/notes.gif')
-          p Everyone in a meeting can take notes and see them in real time.
+          hr
+          h4 Everyone in a meeting can take notes and see them in real time.
       div.col-md-4
         h4.cardHeader Track Commitments
         div.landingCard 
           img.landingCardGif(src='/images/commit.gif')
-          p Easily assign commitments and set timelines.
+          hr
+          h4 Easily assign commitments and set timelines.
       div.col-md-4
         h4.cardHeader Email the Summary
         div.landingCard 
           img.landingCardGif(src='/images/email.gif')
-          p All members receive an email summary when the meeting is over.
+          hr
+          h4 All members receive an email summary when the meeting is over.
 
     row
       a#signUpButton.btn.btn-primary(href='/pricing') Sign Up Now!

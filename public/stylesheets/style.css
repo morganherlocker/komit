@@ -50,3 +50,11 @@ body {
 .price {
 	align: center;
 }
+
+#registerFormButtonDiv {
+	text-align: center;
+}
+
+#registerDoneButton {
+	margin-top: 20px
+}

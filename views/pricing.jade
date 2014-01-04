@@ -7,7 +7,7 @@ block content
 
     hr
 
-    h2 The first week is free and you can cancel at any time
+    h2 Try the first week on us
     row
       div.col-md-4
         h2.cardHeader Paddle
@@ -19,7 +19,7 @@ block content
           h1.price
             b $10 
             span / month
-          button.btn.btn-primary Sign Up
+          a.btn.btn-primary(href='/register?plan=basic') Sign Up
       div.col-md-4
         h2.cardHeader Wind
         div.pricingCard
@@ -30,7 +30,7 @@ block content
           h1.price
             b $20 
             span / month
-          button.btn.btn-primary Sign Up
+          a.btn.btn-primary(href='/register?plan=standard') Sign Up
       div.col-md-4
         h2.cardHeader Steam
         div.pricingCard
@@ -41,4 +41,4 @@ block content
           h1.price
             b $30 
             span / month
-          button.btn.btn-primary Sign Up
+          a.btn.btn-primary(href='/register?plan=pro') Sign Up

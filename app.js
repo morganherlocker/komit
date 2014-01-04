@@ -7,6 +7,10 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var User = require('./models/user');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
 
@@ -27,8 +31,17 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// setup passport
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// Connect mongoose
+mongoose.connect('mongodb://localhost/komit');
+
 app.get('/', routes.index);
 app.get('/pricing', routes.pricing);
+app.get('/register', routes.register);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
