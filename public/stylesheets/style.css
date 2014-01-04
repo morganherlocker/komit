@@ -11,7 +11,9 @@ a {
 }
 
 .landingHeader {
+	padding: 20px;
 	color: black;
+	background-color: #ecae1f;
 }
 
 body {
@@ -31,4 +33,16 @@ body {
 .landingCardGif {
 	height:260px; 
 	width:100%;
+}
+
+.landingCaption {
+	background-color: lightblue;
+	padding: 20px;
+}
+
+#signUpButton {
+	margin-left: 50%; 
+	margin-top: 50px;
+	padding: 25px;
+	float: center;
 }
