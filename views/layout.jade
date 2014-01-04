@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= title
+    title komit.io
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -15,19 +15,19 @@ html
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href='#') komit.io
+        a.navbar-brand(href='/') komit.io
 
       div.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li.active
-            a(href='/about') About
+          //li.active
+          //  a(href='/about') About
           li
             a(href='/pricing') Pricing
 
         ul.nav.navbar-nav.navbar-right
           li
-            button.btn.btn-primary#registerButton(type='submit') Register
+            a.btn.btn-primary#registerButton(href='/pricing') Register
           li.dropdown
-            button.btn.btn-warning#signInButton(type='submit') Sign In
+            a.btn.btn-warning#signInButton(href='/login') Sign In
 
     block content
