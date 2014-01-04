@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#registerButton, #signInButton {
+	padding: 15px;
+}
+
+.landingHeader {
+	color: white;
+}
+
+body {
+	background-color: grey;
 }
