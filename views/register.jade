@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  script(src="https://checkout.stripe.com/checkout.js")
   script(src='/js/register.js')
   div.container
     row
@@ -19,18 +20,7 @@ block content
           div.form-group
             label Confirm Password
             input.form-control(type='password', placeholder="Re-enter Password")
-          div.form-group
-            label Card Type
-            select.form-control()
-              option Visa
-              option Mastercard
-              option American Express
-          div.form-group
-            label Card Expiritation
-            input.form-control(type='date')
-          div.form-group
-            label Security Code
-            input.form-control(type='text', placeholder='Enter Security Code')
+
           div.radio
             label
               input#optionsRadios1(type='radio', name='optionsRadios', value='paddle')
@@ -45,4 +35,4 @@ block content
               | Steam [15 users @ $30/month]
 
           div#registerFormButtonDiv
-            submit.btn.btn-primary#registerDoneButton Done
+            submit.btn.btn-primary#registerDoneButton Checkout
