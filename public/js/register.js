@@ -26,6 +26,9 @@ $(function(){
 
 var handler = StripeCheckout.configure({
   key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+  //'data-name': 'komit',
+  //'data-description': $(':radio').val(),
+  //'data-email': $('#emailInput').val(),
   image: 'https://drupal.org/files/styles/grid-3/public/project-images/Very-Basic-Checked-checkbox-icon.png?itok=0nrFxSo_',
   token: function(token, args) {
     alert(token)
@@ -36,8 +39,9 @@ var handler = StripeCheckout.configure({
 document.getElementById('registerDoneButton').addEventListener('click', function(e) {
   // Open Checkout with further options
   handler.open({
-    name: 'Demo Site',
-    description: '2 widgets ($20.00)',
+    name: 'komit',
+    email: $('#emailInput').val(),
+    description: $(':radio').val() + ' plan',
     amount: 2000
   });
   e.preventDefault();
