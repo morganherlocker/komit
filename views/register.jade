@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  script(src='/js/register.js')
   div.container
     row
       h1.landingHeader Almost there!
@@ -30,6 +31,18 @@ block content
           div.form-group
             label Security Code
             input.form-control(type='text', placeholder='123')
-        
+          div.radio
+            label
+              input#optionsRadios1(type='radio', name='optionsRadios', value='paddle')
+              | Paddle [1 user @ $10/month]
+          div.radio
+            label
+              input#optionsRadios2(type='radio', name='optionsRadios', value='wind')
+              | Wind [5 users @ $20/month]
+          div.radio
+            label
+              input#optionsRadios2(type='radio', name='optionsRadios', value='steam')
+              | Steam [15 users @ $30/month]
+
           div#registerFormButtonDiv
             submit.btn.btn-primary#registerDoneButton Done
