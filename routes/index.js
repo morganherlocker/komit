@@ -28,7 +28,8 @@ exports.register = function(req, res){
  * POST stripe subscription
  */
 
-exports.register = function(req, res){
-  
+exports.subscription = function(req, res){
+  console.log('!!!!!!!!!!!!!!!!!!!!!!!')
+  console.log(req.body.token)
   res.send('ok')
 };

@@ -42,6 +42,7 @@ mongoose.connect('mongodb://localhost/komit');
 app.get('/', routes.index);
 app.get('/pricing', routes.pricing);
 app.get('/register', routes.register);
+app.get('/subscription', routes.subscription);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
