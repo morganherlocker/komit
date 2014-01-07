@@ -23,3 +23,12 @@ exports.pricing = function(req, res){
 exports.register = function(req, res){
   res.render('register', {});
 };
+
+/*
+ * POST stripe subscription
+ */
+
+exports.register = function(req, res){
+  
+  res.send('ok')
+};

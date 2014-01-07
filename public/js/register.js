@@ -26,9 +26,6 @@ $(function(){
 
 var handler = StripeCheckout.configure({
   key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-  //'data-name': 'komit',
-  //'data-description': $(':radio').val(),
-  //'data-email': $('#emailInput').val(),
   image: 'https://drupal.org/files/styles/grid-3/public/project-images/Very-Basic-Checked-checkbox-icon.png?itok=0nrFxSo_',
   token: function(token, args) {
     alert(token)
@@ -42,6 +39,7 @@ document.getElementById('registerDoneButton').addEventListener('click', function
     name: 'komit',
     email: $('#emailInput').val(),
     description: $(':radio').val() + ' plan',
+    //'billingAddress': true,
     amount: 2000
   });
   e.preventDefault();
