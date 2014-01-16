@@ -58,3 +58,11 @@ body {
 #registerDoneButton {
 	margin: 20px
 }
+
+#startMeetingButtonDiv {
+	text-align: center;
+}
+
+#startMeetingButton {
+	margin: 20px
+}

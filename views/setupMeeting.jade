@@ -8,11 +8,19 @@ block content
 
     row.col-md-6.col-md-offset-3
       h2 Attendees
-      input.form-control(type='text')
-      table.table
-        thead
-          th name
-          th email
-        tbody
-          td John Doe
-          td doe@email.com
+      form
+        div.control-group
+          div.controls.form-inline
+            label(for='userInput') User
+            // this should autocomplete with known users
+            input#userInput.form-control(type='text')
+            button.btn.btn-primary.btn-sm +
+        table.table
+          thead
+            th name
+            th email
+          tbody
+            td John Doe
+            td doe@email.com
+        div#startMeetingButtonDiv
+            submit.btn.btn-primary#startMeetingButton Send Invites
