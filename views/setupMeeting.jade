@@ -10,11 +10,15 @@ block content
       h2 Attendees
       form
         div.control-group
-          div.controls.form-inline
-            label(for='userInput') User
-            // this should autocomplete with known users
-            input#userInput.form-control(type='text')
-            button.btn.btn-primary.btn-sm +
+          label(for='userInput') Name
+          // this should autocomplete with known users
+          input#nameInput.form-control(type='text')
+        div.control-group
+          label(for='userInput') Email
+          // this should autocomplete with known users
+          input#emailInput.form-control(type='text')
+        div#addUserButtonDiv
+          button#addUserButton.btn.btn-warning.btn-sm Add User
         table.table
           thead
             th name

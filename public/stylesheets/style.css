@@ -66,3 +66,11 @@ body {
 #startMeetingButton {
 	margin: 20px
 }
+
+#addUserButtonDiv {
+	text-align: center;
+}
+
+#addUserButton {
+	margin: 20px
+}
