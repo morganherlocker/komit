@@ -43,6 +43,9 @@ app.get('/', routes.index);
 app.get('/pricing', routes.pricing);
 app.get('/register', routes.register);
 app.post('/subscription', routes.subscription);
+app.get('/panel', routes.panel);
+app.get('/meeting', routes.meeting);
+app.get('/setupMeeting', routes.setupMeeting);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

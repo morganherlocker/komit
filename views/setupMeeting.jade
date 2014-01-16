@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div.container
+    row
+      h1 Setup Meeting
+    hr
+
+    row.col-md-6.col-md-offset-3
+      h2 Attendees
+      input.form-control(type='text')
+      table.table
+        thead
+          th name
+          th email
+        tbody
+          td John Doe
+          td doe@email.com

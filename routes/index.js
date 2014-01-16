@@ -29,7 +29,33 @@ exports.register = function(req, res){
  */
 
 exports.subscription = function(req, res){
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!')
   console.log(req.body.token)
   res.send('ok')
 };
+
+/*
+ * GET panel page.
+ */
+
+exports.panel = function(req, res){
+  res.render('panel', {});
+};
+
+/*
+ * GET register page.
+ */
+
+exports.meeting = function(req, res){
+  res.render('meeting', {});
+};
+
+/*
+ * GET setupMeeting page.
+ */
+
+exports.setupMeeting = function(req, res){
+  res.render('setupMeeting', {});
+};
+
+
+
