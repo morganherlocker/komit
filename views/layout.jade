@@ -10,14 +10,17 @@ html
   body
     nav.navbar.navbar-default(role='navigation')
       div.navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#collapsable')
           span.sr-only Toggle navigation
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href='/') komit.io
+        div.navbar-inner
+          a.navbar-brand(href='/') 
+            img(src='/images/hand-white.png', style='width:30px')
+            span komit.io
 
-      div.collapse.navbar-collapse
+      div.collapse.navbar-collapse#collapsable
         ul.nav.navbar-nav
           //li.active
           //  a(href='/about') About
