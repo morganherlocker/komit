@@ -1,10 +1,13 @@
 $(function(){
-
+  var d = new Date();
+  //alert('aaaa')
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  $('#meetingNameInput').val(d.getMonth()+1+'/'+d.getDay()+'/'+d.getFullYear()+' '+days[d.getDay()]+' - ')
+  $('#meetingNameInput').select()
   // add name to invites
   $('#addUserButton').click(function(){
     addInvite()
   })
-  
 })
 
 function addInvite(){
@@ -22,6 +25,9 @@ function addInvite(){
         '<td>'+email+'</td></td>'+
         '<td><a href="#">remove</a></td></tr>')
       name = $('#nameInput').focus()
+      $('#'+'tr_'+email).click(function(){
+        this.remove()
+      })
     }
   )
 }
