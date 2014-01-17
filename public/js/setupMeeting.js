@@ -1,6 +1,6 @@
 $(function(){
+  // set default name
   var d = new Date();
-  //alert('aaaa')
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var hours = ((d.getHours() + 11) % 12 + 1)
   var amPm = d.getHours() < 12 ? "AM" : "PM";
@@ -12,9 +12,11 @@ $(function(){
                     ':'+d.getMinutes()+
                     ' '+amPm
                     ' - '
-
   $('#meetingNameInput').val(defaultName)
+
+  // select name text
   $('#meetingNameInput').select()
+
   // add name to invites
   $('#addUserButton').click(function(){
     addInvite()

@@ -5,6 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
+var meeting = require('./routes/meeting')
 var http = require('http');
 var path = require('path');
 var User = require('./models/user');
@@ -44,7 +45,7 @@ app.get('/pricing', routes.pricing);
 app.get('/register', routes.register);
 app.post('/subscription', routes.subscription);
 app.get('/panel', routes.panel);
-app.get('/meeting', routes.meeting);
+app.get('/meeting', meeting);
 app.get('/setupMeeting', routes.setupMeeting);
 
 http.createServer(app).listen(app.get('port'), function(){

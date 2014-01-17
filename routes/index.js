@@ -42,14 +42,6 @@ exports.panel = function(req, res){
 };
 
 /*
- * GET register page.
- */
-
-exports.meeting = function(req, res){
-  res.render('meeting', {});
-};
-
-/*
  * GET setupMeeting page.
  */
 
