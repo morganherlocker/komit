@@ -2,7 +2,18 @@ $(function(){
   var d = new Date();
   //alert('aaaa')
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  $('#meetingNameInput').val(d.getMonth()+1+'/'+d.getDay()+'/'+d.getFullYear()+' '+days[d.getDay()]+' - ')
+  var hours = ((d.getHours() + 11) % 12 + 1)
+  var amPm = d.getHours() < 12 ? "AM" : "PM";
+  var defaultName = d.getMonth()+1+'/'+
+                    d.getDay()+'/'+
+                    d.getFullYear()+
+                    ' '+days[d.getDay()]+
+                    ' '+hours+
+                    ':'+d.getMinutes()+
+                    ' '+amPm
+                    ' - '
+
+  $('#meetingNameInput').val(defaultName)
   $('#meetingNameInput').select()
   // add name to invites
   $('#addUserButton').click(function(){
