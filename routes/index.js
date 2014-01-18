@@ -49,5 +49,11 @@ exports.setupMeeting = function(req, res){
   res.render('setupMeeting', {});
 };
 
+/*
+ * GET login page.
+ */
 
+exports.login = function(req, res){
+  res.render('login', {});
+};
 

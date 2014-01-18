@@ -2,14 +2,15 @@ $(function(){
   // set default name
   var d = new Date();
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var hours = ((d.getHours() + 11) % 12 + 1)
+  var hours = pad(((d.getHours() + 11) % 12 + 1))
+  var minutes = pad(d.getMinutes())
   var amPm = d.getHours() < 12 ? "AM" : "PM";
   var defaultName = d.getMonth()+1+'/'+
                     d.getDay()+'/'+
                     d.getFullYear()+
                     ' '+days[d.getDay()]+
                     ' '+hours+
-                    ':'+d.getMinutes()+
+                    ':'+minutes+
                     ' '+amPm
                     ' - '
   $('#meetingNameInput').val(defaultName)
@@ -43,4 +44,12 @@ function addInvite(){
       })
     }
   )
+}
+
+function pad(value) {
+  if(value < 10) {
+      return '0' + value;
+  } else {
+      return value;
+  }
 }

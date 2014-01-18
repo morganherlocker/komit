@@ -1,5 +1,11 @@
 extends layout
 
 block content
+  script(src='/js/meeting.js')
   div.container
-    h1 Meeting
+    h1 #{meeting.name}
+    hr
+
+    row.col-md-6.col-md-offset-3
+      button.btn.btn-primary(style='margin:10px;') + Note
+      button.btn.btn-primary(style='margin:10px;') + Commitment

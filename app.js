@@ -42,6 +42,7 @@ mongoose.connect('mongodb://localhost/komit');
 
 app.get('/', routes.index);
 app.get('/pricing', routes.pricing);
+app.get('/login', routes.login);
 app.get('/register', routes.register);
 app.post('/subscription', routes.subscription);
 app.get('/panel', routes.panel);
