@@ -6,7 +6,7 @@ module.exports = function(req, res){
 
   // fake meeting data
   var meeting = {
-    name: 'Japan Briefing',
+    name: 'Weekly Standup',
     attendees: [
       {
         name: 'Morgan Herlocker',
@@ -19,13 +19,17 @@ module.exports = function(req, res){
     ],
     notes: [
       {
-        title: '',
-        content: ''
+        topic: 'UX Design',
+        content: 'Feedback has been positive so far. Could use a few more beta testers.'
+      },
+      {
+        topic: 'Additional help',
+        content: 'It has been decided that we should find a designer to help with the new logo.'
       }
-    ]
+    ],
     commitments: [
       {
-        commitment: '',
+        commitment: 'Get notes to Mike',
         dueDate: new Date()
       }
     ]

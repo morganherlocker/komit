@@ -6,12 +6,32 @@ block content
     h1 #{meeting.name}
     hr
 
-    row.col-md-6.col-md-offset-3
-      button.btn.btn-primary(style='margin:10px;') + Note
-      button.btn.btn-primary(style='margin:10px;') + Commitment
+    row
+      div.col-md-3
+        h3 Attendees
+        hr
+        div#attendees
+          each attendee in meeting.attendees
+            p #{attendee.name}
+      div.col-md-6
+        button.btn.btn-primary(style='margin:10px;') + Note
+        button.btn.btn-primary(style='margin:10px;') + Commitment
 
-    row.col-md-6.col-md-offset-3
-      h3 Notes
+      div.col-md-6
+        hr
+        h3 Notes
+        div#notes
+          each note in meeting.notes
+            div.card
+              p
+                b #{note.topic}
+              p #{note.content}
 
-    row.col-md-6.col-md-offset-3
-      h3 Commitments
+      div.col-md-6.col-md-offset-3
+        h3 Commitments
+        div#commitments
+          each commitment in meeting.commitments
+            div.card
+              p 
+                b #{commitment.commitment}
+              p #{commitment.dueDate}
