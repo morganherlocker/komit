@@ -1,42 +1,39 @@
 extends layout
 
 block content
+  link(rel='stylesheet', href='/stylesheets/meeting.css')
   script(src='/js/meeting.js')
+  
   div.container
     h1 #{meeting.name}
     hr
 
     row
 
-      div.col-md-3
+      div.col-md-3.card
         h3 Attendees
         hr
         div#attendees(ng-controller='AttendeesController')
           div.card(ng-repeat='attendee in attendees')
             p {{attendee.name}}
-      //      
-        div.col-md-6
-          button.btn.btn-primary(style='margin:10px;') + Note
-          button.btn.btn-primary(style='margin:10px;') + Commitment
 
-      div.col-md-6
-        //hr
+      div.col-md-8(ng-controller='NotesController')
         h3 Notes
-          button.btn.btn-primary.btn-sm(style='margin:10px;') +
-        div#notes(ng-controller='NotesController')
-          div.card(ng-repeat="note in notes")
-            p 
-              b {{note.topic}}
-            p {{note.content}}
+          button.btn.btn-primary.btn-sm(ng-click='addNote()', style='margin:10px;') +
+        div#notes
+          div(ng-repeat="note in notes")
+            div.card 
+              input.form-control(value='{{note.topic}}')
+              textarea.form-control {{note.content}}
 
-      div.col-md-6.col-md-offset-3
+      div.col-md-8.col-md-offset-3(ng-controller='CommitmentsController')
         h3 Commitments
-          button.btn.btn-primary.btn-sm(style='margin:10px;') +
-        div#committments(ng-controller='CommitmentsController')
+          button.btn.btn-primary.btn-sm(ng-click='addCommitment()', style='margin:10px;') +
+        div#committments
           div.card(ng-repeat="commitment in commitments")
-            p 
-              b {{commitment.commitment}}
-            p {{commitment.dueDate}}
+            div.card 
+              input.form-control(value='{{commitment.commitment}}')
+              textarea.form-control {{commitment.dueDate}}
         
 
 

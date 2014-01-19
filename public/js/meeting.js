@@ -1,3 +1,27 @@
+
+
+function NotesController($scope) {
+  $scope.notes = meeting.notes;
+
+  $scope.addNote = function() {
+    $scope.notes.unshift({topic:'', content:''});
+  };
+}
+
+function CommitmentsController($scope) {
+  $scope.commitments = meeting.commitments;
+
+  $scope.addCommitment = function() {
+    $scope.commitments.unshift({name:'', email:''});
+  };
+}
+
+function AttendeesController($scope) {
+  $scope.attendees = meeting.attendees;
+}
+
+
+
 var meeting = {
   name: 'Weekly Standup',
   attendees: [
@@ -26,16 +50,4 @@ var meeting = {
       dueDate: '1/3/2014'
     }
   ]
-}
-
-function NotesController($scope) {
-  $scope.notes = meeting.notes
-}
-
-function CommitmentsController($scope) {
-  $scope.commitments = meeting.commitments
-}
-
-function AttendeesController($scope) {
-  $scope.attendees = meeting.attendees
 }
