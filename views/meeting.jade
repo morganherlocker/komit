@@ -10,12 +10,13 @@ block content
 
     row
 
-      div.col-md-3.card
-        h3 Attendees
-        hr
-        div#attendees(ng-controller='AttendeesController')
-          div.card(ng-repeat='attendee in attendees')
-            p {{attendee.name}}
+      div.col-md-3
+        div.card
+          h3 Attendees
+          hr
+          div#attendees(ng-controller='AttendeesController')
+            div.card(ng-repeat='attendee in attendees')
+              p {{attendee.name}}
 
       div.col-md-8(ng-controller='NotesController')
         h3 Notes
@@ -23,7 +24,9 @@ block content
         div#notes
           div(ng-repeat="note in notes")
             div.card 
+              p Topic
               input.form-control(value='{{note.topic}}')
+              p Notes
               textarea.form-control {{note.content}}
 
       div.col-md-8.col-md-offset-3(ng-controller='CommitmentsController')
@@ -33,7 +36,7 @@ block content
           div.card(ng-repeat="commitment in commitments")
             div.card 
               input.form-control(value='{{commitment.commitment}}')
-              textarea.form-control {{commitment.dueDate}}
+              input.form-control(type='date', value='{{commitment.dueDate}}') 
         
 
 
