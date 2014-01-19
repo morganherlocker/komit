@@ -7,31 +7,37 @@ block content
     hr
 
     row
+
       div.col-md-3
         h3 Attendees
         hr
-        div#attendees
-          each attendee in meeting.attendees
-            p #{attendee.name}
-      div.col-md-6
-        button.btn.btn-primary(style='margin:10px;') + Note
-        button.btn.btn-primary(style='margin:10px;') + Commitment
+        div#attendees(ng-controller='AttendeesController')
+          div.card(ng-repeat='attendee in attendees')
+            p {{attendee.name}}
+      //      
+        div.col-md-6
+          button.btn.btn-primary(style='margin:10px;') + Note
+          button.btn.btn-primary(style='margin:10px;') + Commitment
 
       div.col-md-6
-        hr
+        //hr
         h3 Notes
-        div#notes
-          each note in meeting.notes
-            div.card
-              p
-                b #{note.topic}
-              p #{note.content}
+          button.btn.btn-primary.btn-sm(style='margin:10px;') +
+        div#notes(ng-controller='NotesController')
+          div.card(ng-repeat="note in notes")
+            p 
+              b {{note.topic}}
+            p {{note.content}}
 
       div.col-md-6.col-md-offset-3
         h3 Commitments
-        div#commitments
-          each commitment in meeting.commitments
-            div.card
-              p 
-                b #{commitment.commitment}
-              p #{commitment.dueDate}
+          button.btn.btn-primary.btn-sm(style='margin:10px;') +
+        div#committments(ng-controller='CommitmentsController')
+          div.card(ng-repeat="commitment in commitments")
+            p 
+              b {{commitment.commitment}}
+            p {{commitment.dueDate}}
+        
+
+
+
