@@ -1,7 +1,15 @@
 
 
 function NotesController($scope) {
-  $scope.notes = meeting.notes;
+  if(meeting){
+    $scope.notes = meeting.notes;
+  }
+  else{
+    $scope.notes = {
+      topic: '',
+      content: ''
+    }
+  }
 
   $scope.addNote = function() {
     $scope.notes.unshift({topic:'', content:''});
@@ -32,6 +40,10 @@ var meeting = {
     {
       name: 'John Doe',
       email: 'John@dow.net'
+    },
+    {
+      name: 'Jane Roe',
+      email: 'Jane@hotmai.net'
     }
   ],
   notes: [
