@@ -3,6 +3,9 @@ extends layout
 block content
   script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.backbone.min.js')
   link(rel='stylesheet', href='/stylesheets/meeting.css')
+  link(rel='stylesheet', href='/stylesheets/bootstrap-markdown.min.css')
+  script(src='/js/markdown.min.js')
+  script(src='/js/bootstrap-markdown.js')
   script(src='/js/meeting.js')
   
   div.container
@@ -20,7 +23,7 @@ block content
           h4 Topic
           input#noteTopicInput.form-control
           h4 Content
-          textarea#noteContentInput.form-control
+          textarea#noteContentInput.form-control(name="content", data-provide="markdown", rows="10")
           br
           br
           button#cancelNoteButton.btn.btn-warning Cancel

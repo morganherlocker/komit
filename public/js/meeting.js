@@ -1,4 +1,7 @@
 $(function(){
+  // Setup editors
+  //$("#noteContentInput").markdown({})
+
   // Note Logic
   $('#addNote').click(function(){
     $('.addButton').hide('slow')
@@ -36,7 +39,12 @@ function renderNotes(){
   $('#noteTopicInput').val('')
   $('#noteContentInput').val('')
 
-  $('#notes').append('<div class="card"><b>'+topic+'</b><a class="edit" href="#">edit</a><br><br><p>'+content+'</p></div>')
+  $('#notes').append(
+    '<div class="card"><b>'+
+    topic+
+    '</b><a class="edit" href="#">edit</a><br><br><p>'+
+    markdown.toHTML(content)+
+    '</p></div>')
 }
 
 
