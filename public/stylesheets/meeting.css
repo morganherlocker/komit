@@ -21,3 +21,9 @@
 #noteContentInput {
   height: 200px;
 }
+
+.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
+
+.note {
+  min-height: 100px;
+}

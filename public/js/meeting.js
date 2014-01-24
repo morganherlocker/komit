@@ -2,7 +2,9 @@ $(function(){
   // Render Meeting
   renderNotes()
   renderCommitments()
-
+  $( "#notes" ).sortable({placeholder: "note"});
+  $( "#sortable" ).disableSelection();
+  $( "#commitments" ).sortable();
 
   // Note Logic
   $('#addNote').click(function(){
@@ -62,11 +64,13 @@ function renderNotes(){
 
   _.each(meeting.notes, function(note){
   $('#notes').append(
-    '<div class="card"><h4>'+
+    '<div class="note card"><h4>'+
     note.topic+
-    '</h4><p>'+
+    '</h4>'+
+    '<a class="edit" href="#">edit</a><a class="remove" href="#">remove</a><hr>'+
+    '<p>'+
     markdown.toHTML(note.content)+
-    '</p><a class="edit" href="#">edit</a><a class="remove" href="#">remove</a></div>')
+    '</p></div>')
   })
 }
 
@@ -96,8 +100,6 @@ function renderCommitments(){
 
 
 
-
-
 var meeting = {
   name: 'Weekly Standup',
   attendees: [
@@ -117,7 +119,17 @@ var meeting = {
   notes: [
     {
       topic: 'UX Design',
-      content: 'Feedback has been positive so far. Could use a few more beta testers.'
+      content: 'Relictus est Nelei Pyrame conviciaque pertulit inmixtos \n\
+ \n\
+*Fecit ipsos austroque quantum humum arvum umbris* \n\
+\n\
+Lorem markdownum arida, sanguis quanto, tum, *a* adspexi huius, conclamat **quibus** \n\
+deprendere missi spectabilis. \n\
+\n\
+- Quia inploravere dant Cinyras. *Licet disiectum nigram* fatetur inania illi \n\
+- fonte prementem simul, et excussa Andros [Scyrum](http://seenly.com/). \n\
+- Exitiabile flores. Patrias et coniuge, inhonoratae sibi est ceciderat \n\
+- murmurat; ut oves, is.'
     },
     {
       topic: 'Additional help',
