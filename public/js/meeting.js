@@ -1,10 +1,43 @@
 $(function(){
-  
+  // Note Logic
+  $('#addNote').click(function(){
+    $('.addButton').hide('slow')
+    $('#noteForm').show('slow')
+  })
+
+  $('#cancelNoteButton').click(function(){
+    $('#noteForm').hide('slow')
+    $('.addButton').show('slow')
+  })
+
+  $('#addNoteButton').click(function(){
+    $('#noteForm').hide('slow')
+    $('.addButton').show('slow')
+
+    //render
+    renderNotes()
+  })
+
+  // Commitment Logic
+  $('#addCommitment').click(function(){
+    $('.addButton').hide('slow')
+    $('#commitmentForm').show('slow')
+  })
+
+  $('#cancelCommitmentButton').click(function(){
+    $('#commitmentForm').hide('slow')
+    $('.addButton').show('slow')
+  })
 })
 
+function renderNotes(){
+  var topic = $('#noteTopicInput').val()
+  var content = $('#noteContentInput').val()
+  $('#notes').append('<div class="card"><b>'+topic+'</b><p>'+content+'</p></div>')
+}
 
 
-
+/*
 
 function NotesController($scope) {
   if(meeting){
@@ -35,7 +68,7 @@ function AttendeesController($scope) {
 }
 
 
-
+*/
 var meeting = {
   name: 'Weekly Standup',
   attendees: [

@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  script(src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.backbone.min.js')
   link(rel='stylesheet', href='/stylesheets/meeting.css')
   script(src='/js/meeting.js')
   
@@ -10,35 +11,48 @@ block content
 
     row
       div.col-md-8
-        button.btn.btn-primary.btn-sm(ng-click='addCommitment()', style='margin:10px;') Add Note
-        button.btn.btn-primary.btn-sm(ng-click='addCommitment()', style='margin:10px;') Add Commitment
+        button#addNote.addButton.btn.btn-primary.btn-sm(style='margin:10px;') Add Note
+        button#addCommitment.addButton.btn.btn-primary.btn-sm(style='margin:10px;') Add Commitment
 
     row
-      div.col-md-8(ng-controller='NotesController')
+      div#noteForm.col-md-8(hidden)
+        form
+          h4 Topic
+          input.form-control
+          h4 Content
+          textarea.form-control
+          br
+          br
+          button#cancelNoteButton.btn.btn-warning Cancel
+          button.btn.btn-warning Save
+      div#commitmentForm.col-md-8(hidden)
+        form
+          h4 Commitment
+          input.form-control
+          h4 Date
+          input.form-control(type='date')
+          br
+          br
+          button#cancelCommitmentButton.btn.btn-warning Cancel
+          button.btn.btn-warning Save
+
+    row
+      div.col-md-8
         h3 Notes
-          button.btn.btn-primary.btn-sm(ng-click='addNote()', style='margin:10px;') +
         div#notes
-          div(ng-repeat="note in notes")
-            div.card 
-              b {{note.topic}}
-              br
-              p {{note.content}}
 
-      div.col-md-3
-        div.card
-          h3 Attendees
-          hr
-          div#attendees(ng-controller='AttendeesController')
-            div.card(ng-repeat='attendee in attendees')
-              p {{attendee.name}}
 
-      div.col-md-8(ng-controller='CommitmentsController')
+      //              
+        div.col-md-3
+          div.card
+            h3 Attendees
+            hr
+            div#attendees(ng-controller='AttendeesController')
+              div.card(ng-repeat='attendee in attendees')
+                p {{attendee.name}}
+
+      div.col-md-8
         h3 Commitments
-          button.btn.btn-primary.btn-sm(ng-click='addCommitment()', style='margin:10px;') +
         div#committments
-          div.card(ng-repeat="commitment in commitments")
-            div.card 
-              input.form-control(value='{{commitment.commitment}}')
-              input.form-control(type='date', value='{{commitment.dueDate}}') 
-        
+
       
