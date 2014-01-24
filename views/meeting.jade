@@ -31,19 +31,22 @@ block content
       div#commitmentForm.col-md-8(hidden)
         form
           h4 Commitment
-          input.form-control
+          input#commmitmentCommitmentInput.form-control
           h4 Date
-          input.form-control(type='date')
+          input#commitmentDueDateInput.form-control(type='date')
           br
           br
           button#cancelCommitmentButton.btn.btn-warning Cancel
-          button.btn.btn-warning Save
+          button#addCommitmentButton.btn.btn-warning Save
 
     row
       div.col-md-8
         h3 Notes
         div#notes
 
+      div.col-md-8
+        h3 Commitments
+        div#commitments
 
       //              
         div.col-md-3
@@ -53,9 +56,5 @@ block content
             div#attendees(ng-controller='AttendeesController')
               div.card(ng-repeat='attendee in attendees')
                 p {{attendee.name}}
-
-      div.col-md-8
-        h3 Commitments
-        div#committments
 
       

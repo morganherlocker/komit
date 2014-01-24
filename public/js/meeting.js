@@ -1,6 +1,8 @@
 $(function(){
   // Render Meeting
   renderNotes()
+  renderCommitments()
+
 
   // Note Logic
   $('#addNote').click(function(){
@@ -25,6 +27,7 @@ $(function(){
     addNote(topic, content)
   })
 
+
   // Commitment Logic
   $('#addCommitment').click(function(){
     $('.addButton').hide('slow')
@@ -34,6 +37,18 @@ $(function(){
   $('#cancelCommitmentButton').click(function(){
     $('#commitmentForm').hide('slow')
     $('.addButton').show('slow')
+  })
+
+  $('#addCommitmentButton').click(function(){
+    $('#commitmentForm').hide('slow')
+    $('.addButton').show('slow')
+
+    // Add commitment to meeting
+    var commitment = $('#commitmentCommitmentInput').val()
+    var dueDate = $('#commitmentDueDateInput').val()
+    $('#commitmentCommitmentInput').val('')
+    $('#commitmentDueDateInput').val('')
+    addCommitment(commitment, dueDate)
   })
 })
 
@@ -49,27 +64,27 @@ function renderNotes(){
   $('#notes').append(
     '<div class="card"><h4>'+
     note.topic+
-    '</h4><a class="edit" href="#">edit</a><a class="remove" href="#">remove</a><br><br><p>'+
+    '</h4><p>'+
     markdown.toHTML(note.content)+
-    '</p></div>')
+    '</p><a class="edit" href="#">edit</a><a class="remove" href="#">remove</a></div>')
   })
 }
 
-function addCommitment(commitment, content){
-  meeting.notes.unshift({topic: topic, content: content})
-  renderNotes()
+function addCommitment(commitment, dueDate){
+  meeting.commitments.unshift({commitment: commitment, dueDate: dueDate})
+  renderCommitments()
 }
 
-function renderNotes(){
-  $('#notes').empty()
+function renderCommitments(){
+  $('#commitments').empty()
 
-  _.each(meeting.notes, function(note){
-  $('#notes').append(
+  _.each(meeting.commitments, function(commitment){
+  $('#commitments').append(
     '<div class="card"><h4>'+
-    note.topic+
-    '</h4><a class="edit" href="#">edit</a><a class="remove" href="#">remove</a><br><br><p>'+
-    markdown.toHTML(note.content)+
-    '</p></div>')
+    commitment.commitment+
+    '</h4><p>'+
+    commitment.dueDate+
+    '</p><a class="edit" href="#">edit</a><a class="remove" href="#">remove</a></div>')
   })
 }
 
