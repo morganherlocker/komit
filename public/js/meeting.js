@@ -1,6 +1,6 @@
 $(function(){
-  // Setup editors
-  //$("#noteContentInput").markdown({})
+  // Render Meeting
+  renderNotes()
 
   // Note Logic
   $('#addNote').click(function(){
@@ -17,8 +17,12 @@ $(function(){
     $('#noteForm').hide('slow')
     $('.addButton').show('slow')
 
-    //render
-    renderNotes()
+    // Add note to meeting
+    var topic = $('#noteTopicInput').val()
+    var content = $('#noteContentInput').val()
+    $('#noteTopicInput').val('')
+    $('#noteContentInput').val('')
+    addNote(topic, content)
   })
 
   // Commitment Logic
@@ -33,53 +37,52 @@ $(function(){
   })
 })
 
+function addNote(topic, content){
+  meeting.notes.unshift({topic: topic, content: content})
+  renderNotes()
+}
+
 function renderNotes(){
-  var topic = $('#noteTopicInput').val()
-  var content = $('#noteContentInput').val()
-  $('#noteTopicInput').val('')
-  $('#noteContentInput').val('')
+  $('#notes').empty()
 
+  _.each(meeting.notes, function(note){
   $('#notes').append(
-    '<div class="card"><b>'+
-    topic+
-    '</b><a class="edit" href="#">edit</a><br><br><p>'+
-    markdown.toHTML(content)+
+    '<div class="card"><h4>'+
+    note.topic+
+    '</h4><a class="edit" href="#">edit</a><a class="remove" href="#">remove</a><br><br><p>'+
+    markdown.toHTML(note.content)+
     '</p></div>')
+  })
+}
+
+function addCommitment(commitment, content){
+  meeting.notes.unshift({topic: topic, content: content})
+  renderNotes()
+}
+
+function renderNotes(){
+  $('#notes').empty()
+
+  _.each(meeting.notes, function(note){
+  $('#notes').append(
+    '<div class="card"><h4>'+
+    note.topic+
+    '</h4><a class="edit" href="#">edit</a><a class="remove" href="#">remove</a><br><br><p>'+
+    markdown.toHTML(note.content)+
+    '</p></div>')
+  })
 }
 
 
-/*
-
-function NotesController($scope) {
-  if(meeting){
-    $scope.notes = meeting.notes;
-  }
-  else{
-    $scope.notes = {
-      topic: '',
-      content: ''
-    }
-  }
-
-  $scope.addNote = function() {
-    $scope.notes.unshift({topic:'', content:''});
-  };
-}
-
-function CommitmentsController($scope) {
-  $scope.commitments = meeting.commitments;
-
-  $scope.addCommitment = function() {
-    $scope.commitments.unshift({name:'', email:''});
-  };
-}
-
-function AttendeesController($scope) {
-  $scope.attendees = meeting.attendees;
-}
 
 
-*/
+
+
+
+
+
+
+
 var meeting = {
   name: 'Weekly Standup',
   attendees: [
