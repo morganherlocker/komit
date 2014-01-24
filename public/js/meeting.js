@@ -1,3 +1,9 @@
+$(function(){
+  
+})
+
+
+
 
 
 function NotesController($scope) {

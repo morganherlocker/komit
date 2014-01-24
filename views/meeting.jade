@@ -9,6 +9,20 @@ block content
     hr
 
     row
+      div.col-md-8
+        button.btn.btn-primary.btn-sm(ng-click='addCommitment()', style='margin:10px;') Add Note
+        button.btn.btn-primary.btn-sm(ng-click='addCommitment()', style='margin:10px;') Add Commitment
+
+    row
+      div.col-md-8(ng-controller='NotesController')
+        h3 Notes
+          button.btn.btn-primary.btn-sm(ng-click='addNote()', style='margin:10px;') +
+        div#notes
+          div(ng-repeat="note in notes")
+            div.card 
+              b {{note.topic}}
+              br
+              p {{note.content}}
 
       div.col-md-3
         div.card
@@ -18,18 +32,7 @@ block content
             div.card(ng-repeat='attendee in attendees')
               p {{attendee.name}}
 
-      div.col-md-8(ng-controller='NotesController')
-        h3 Notes
-          button.btn.btn-primary.btn-sm(ng-click='addNote()', style='margin:10px;') +
-        div#notes
-          div(ng-repeat="note in notes")
-            div.card 
-              p Topic
-              input.form-control(value='{{note.topic}}')
-              p Notes
-              textarea.form-control {{note.content}}
-
-      div.col-md-8.col-md-offset-3(ng-controller='CommitmentsController')
+      div.col-md-8(ng-controller='CommitmentsController')
         h3 Commitments
           button.btn.btn-primary.btn-sm(ng-click='addCommitment()', style='margin:10px;') +
         div#committments
@@ -38,6 +41,4 @@ block content
               input.form-control(value='{{commitment.commitment}}')
               input.form-control(type='date', value='{{commitment.dueDate}}') 
         
-
-
-
+      
