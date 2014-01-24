@@ -8,3 +8,11 @@
   animation:fly-in-from-left .5s 1s ease both;
   transform-origin:top left;
 }
+
+.edit {
+  padding-left: 5px;
+}
+
+#noteContentInput {
+  height: 200px;
+}

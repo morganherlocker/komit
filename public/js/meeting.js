@@ -33,7 +33,10 @@ $(function(){
 function renderNotes(){
   var topic = $('#noteTopicInput').val()
   var content = $('#noteContentInput').val()
-  $('#notes').append('<div class="card"><b>'+topic+'</b><p>'+content+'</p></div>')
+  $('#noteTopicInput').val('')
+  $('#noteContentInput').val('')
+
+  $('#notes').append('<div class="card"><b>'+topic+'</b><a class="edit" href="#">edit</a><br><br><p>'+content+'</p></div>')
 }
 
 
