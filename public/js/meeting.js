@@ -2,7 +2,7 @@ $(function(){
   // Render Meeting
   renderNotes()
   renderCommitments()
-  $( "#notes" ).sortable({placeholder: "note"});
+  $( "#notes" ).sortable({placeholder: "note-ph", forcePlaceholderSize: true});
   $( "#sortable" ).disableSelection();
   $( "#commitments" ).sortable();
 
@@ -18,7 +18,7 @@ $(function(){
   })
 
   $('#addNoteButton').click(function(){
-    $('#noteForm').hide('slow')
+    //$('#noteForm').hide('slow')
     $('.addButton').show('slow')
 
     // Add note to meeting
